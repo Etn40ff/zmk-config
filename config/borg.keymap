@@ -4,6 +4,13 @@
  * SPDX-License-Identifier: MIT
  */
 
+#define BASE 0
+#define LOWER 1
+#define UPPER 2
+#define MOUSE_KEYS 3
+#define SYS 4
+#define SYS_TP 5
+
 /* encoder 
     // Change mouse default parameters
     //#define ZMK_POINTING_DEFAULT_MOVE_VAL 1200  // 600
@@ -21,13 +28,6 @@
 #include <dt-bindings/zmk/mouse.h>
 #include <behaviors/mouse_keys.dtsi>
 #include "include/mouse_tp.dtsi"
-
-#define BASE 0
-#define LOWER 1
-#define UPPER 2
-#define MOUSE_KEYS 3
-#define SYS 4
-#define SYS_TP 5
 
 // Double the speed of scrolling and tweak parameters
 /*
