@@ -494,10 +494,12 @@
 
 #endif
 
+#include <input/processors.dtsi>
+#include <dt-bindings/zmk/input_transform.h>
 
 / {
     mouse_ps2: mouse_ps2 {
-		status = "disabled";
+	status = "disabled";
         compatible = "zmk,input-mouse-ps2";
 
 #ifdef MOUSE_PS2_DRIVER_UART
@@ -512,10 +514,12 @@
     };
 
     mouse_ps2_input_listener: mouse_ps2_input_listener {
-        compatible = "zmk,input-listener-ps2";
+        compatible = "zmk,input-listener";
         status = "disabled";
 
         device = <&mouse_ps2>;
+	input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>, <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT)>, <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)> , <&zip_temp_layer 3 500>;
+
 
 		// Some of the available settings depend on the keymap. So they
 		// are adjusted in...
