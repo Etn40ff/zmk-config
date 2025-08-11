@@ -11,13 +11,11 @@
 #define SYS 4
 #define SYS_TP 5
 
-/* encoder 
-    // Change mouse default parameters
-    //#define ZMK_POINTING_DEFAULT_MOVE_VAL 1200  // 600
-    #define ZMK_POINTING_DEFAULT_SCRL_VAL 25   // 10
+// Change mouse default parameters
+//#define ZMK_POINTING_DEFAULT_MOVE_VAL 1200  // 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 25   // 10
 
-    //#include <input/processors.dtsi>
-*/
+//#include <input/processors.dtsi>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
@@ -55,17 +53,6 @@
         };
     };
 
-/* encoder
-        behaviors {
-            mouse_wheel: mouse_wheel {
-                compatible = "zmk,behavior-sensor-rotate";
-                #sensor-binding-cells = <0>;
-                bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
-            tap-ms = <100>;
-            };
-        };
-*/
-
     behaviors {
         lmt: layer_mouse_tap {
             compatible = "zmk,behavior-hold-tap";
@@ -73,6 +60,13 @@
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
             bindings = <&mo>, <&mkp>;
+        };
+	
+        mouse_wheel: mouse_wheel {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+            tap-ms = <100>;
         };
     };
 
@@ -92,9 +86,7 @@
                                                                                                              &mo LOWER                &kp LGUI                 &kp SPACE                     &kp RET                  &lmt MOUSE_KEYS MCLK     &mo UPPER
 //                                                                                                         ╰────────────────────────┴────────────────────────┴────────────────────────╯    ╰────────────────────────┴────────────────────────┴────────────────────────╯
             >;
-	    /*
 	    sensor-bindings = <&mouse_wheel>;
-	    */
         };
 
         Lower_layer {
