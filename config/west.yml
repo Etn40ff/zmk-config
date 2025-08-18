@@ -4,6 +4,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: badjeff
       url-base: https://github.com/badjeff
+    - name: infused-kim
+      url-base: https://github.com/infused-kim
 
   projects:
 
@@ -15,7 +17,7 @@ manifest:
 
     # Module for PS/2 mouse & TP driver
     - name: kb_zmk_ps2_mouse_trackpoint_driver
-      remote: badjeff
+      remote: infused-kim
       revision: main
 
   self:
