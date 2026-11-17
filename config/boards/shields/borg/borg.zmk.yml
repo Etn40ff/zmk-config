@@ -6,7 +6,6 @@ requires: [pro_micro]
 exposes: [i2c_oled]
 features:
   - keys
-  - studio
 siblings:
   - borg_left
-  - borg_righ
+  - borg_right
